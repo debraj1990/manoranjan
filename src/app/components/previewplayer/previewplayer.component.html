@@ -1,0 +1,30 @@
+<div class="modal-header">
+  <h4 class="modal-title">Preview Player</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <!-- <iframe width="420" height="345" [src]="iframeUrl | safe">
+  </iframe> -->
+  <!-- <iframe src="https://stackoverflow.com/questions/39407618/angular-2-declaring-an-array-of-objects/39407753"></iframe> -->
+  <!-- <iframe width="420" height="315"
+  src="https://www.youtube.com/embed/tgbNymZ7vqY">
+  </iframe> -->
+  <!-- <audio controls>
+    <source src="{{iframeUrl}}" type="audio/ogg">
+    <source src="{{iframeUrl}}" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio> -->
+  <video width="100%" height="240" controls autoplay poster="http://culturapoprigor.com.br/wp-content/uploads/2018/02/music.gif">
+    <source src="{{iframeUrl}}" type="video/mp4">
+    <source src="{{iframeUrl}}" type="video/ogg">
+  Your browser does not support the video tag.
+  </video>
+  <!-- {{iframeUrl}} -->
+</div>
+<!-- <div class="modal-footer">
+  <div class="col-sm" style="margin-left: 37%;">
+    <button type="button" class="btn btn-primary" (click)="activeModal.close('Cross click')">Close</button>
+  </div>
+</div> -->

@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+
+$fa-font-path: "~font-awesome/fonts";
+
+@import "~font-awesome/scss/font-awesome";
+
+.btn-primary {
+    // color: #fff;
+    background-color: #0C949A;
+    border-color: #0C949A;
+    &:hover, &:focus, &:active {
+        background-color: #467775 !important;
+        border-color: #467775 !important;
+    }
+}
+.hide {
+    display: none;
+}
+a {
+    color: #08c1bf;
+    font-weight: 500; 
+    &:hover {
+        color: #467775;
+        text-decoration: none;
+    }
+}
+i {
+    &.fa {
+        font-size: -webkit-xxx-large;
+        cursor: pointer;
+
+        &.fa-info-circle {
+            color: #a6d0d0;
+            font-size: 25px;
+        }
+        &.fa-microphone {
+            &.in-use {
+                &:before {
+                    animation: cursor 1.5s ease infinite;
+                }
+            }
+        }
+    }
+}
+
+@keyframes cursor {
+    0% { color: #f5f5dc; }
+    50% { color: rgb(71, 235, 104); }
+    100% {color: #f5f5dc;}
+}
+
+body {
+    background: #e0e0e0;
+}

@@ -1,0 +1,21 @@
+
+<form ngNativeValidate (submit)="submitSearchCriteria()">
+  <div class="modal-body">
+      <div class="row form-group">
+        
+        <div class="col-sm search-input-container">
+            <input type="text" [(ngModel)]="artistname" (click)="voiceToText($event)" placeholder="{{textLabel}}"  name="artistname"  id="artistname" class="form-control" required/>
+            <i class="fa fa-microphone" title="{{speechApi.micLabel}}" (click)="speakToManoranjan($event)"></i>
+            <i class="fa fa-info-circle" title="Info" (click)="speechApi.speakText(textLabel)"></i>           
+        </div>
+        
+      </div>
+      
+            
+  </div>
+  <div class="modal-footer">
+    <div class="top-arrow">top-arrow</div>
+    <p>{{tapInstruction}}<i class="fa fa-info-circle" title="Info" (click)="speechApi.speakText(tapInstruction)"></i></p>
+    <button type="submit" class="btn btn-primary hide">Search</button>
+  </div>
+</form>

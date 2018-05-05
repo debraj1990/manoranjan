@@ -1,0 +1,55 @@
+<div class="row search-result-header">
+    <div class="container">
+      <div class="col-sm">
+          <h1 class="heading-text">Search results for "{{artistname}}".   </h1>
+          <a [routerLink]="['']" href="#" class="clear" role="button">( Clear )</a>
+          <i class="fa fa-microphone" title="{{speechApi.micLabel}}" (click)="speakToManoranjan($event)"></i>
+      </div>
+      
+    </div>
+</div>
+<div class="container">  
+  <section *ngIf="searchResultsObj?.resultCount > 0">
+    <div class="row result-box" *ngFor="let searchItem of searchResultsObj.results; let i = index">
+      <div class="col-sm-2">
+        <img class="img-thumbnail rounded-circle" src="{{searchItem.artworkUrl100}}" title="{{searchItem.trackName}}"/>
+      </div>
+      <div class="col-sm artist-details">
+        <div class="row">
+          <div class="col-sm">
+            <span class="bold-text">Artist name : {{searchItem.artistName}}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <span class="bold-text">Track name : {{searchItem.trackName}}</span>
+          </div>
+        </div>        
+        <div class="row">
+          <div class="col-sm">
+            <span class="light-text">{{searchItem.shortDescription}}</span> <!--.substr(0, 40)-->
+          </div>
+        </div>        
+        <div class="row">
+          <div class="col-sm">
+            <p class="mic-text">{{playInstruction}}<strong>{{i < 9 ? '0'+(i+1)+'"' : (i+1)+'"'}}</strong>
+              <i class="fa fa-info-circle" title="Info" (click)="manoranjanSays(playVoiceInstruction, i)"></i>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+              <button class="btn btn-primary btn-lg hide" attr.data-identifierbtn="play{{i < 9 ? '0'+(i+1) : (i+1)}}" (click)="openPlayerDialog(searchItem.previewUrl)">Play Preview</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section *ngIf="searchResultsObj?.resultCount == 0">
+    <div class="row">
+      <div class="col-sm">
+        <span>No match found!!</span>
+      </div>
+    </div>
+  </section>
+</div>
