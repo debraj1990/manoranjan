@@ -26,7 +26,13 @@ export class ArtistlandingComponent implements OnInit {
     this.helloVocalText = 'Click and Say "Hello Manoranjan"';
     this.welcomeText = 'Welcome to Manoranjan - The voice for Entertainment!!'
     this.searchLabel = 'Hello Dear; You can now search your entertainment stuff here. All you have to do is just click on mic & say: "Search Manoranjan"';
-    this.voiceSettingsComplete.then(
+    this.voiceSettingsComplete
+    .then(
+      (val) => {console.log(val);
+        this.speechApi.speakText(this.welcomeText);
+        this.speechApi.speakText("To start, " + this.helloVocalText);
+      })
+    .catch(
       (val) => {console.log(val);
         this.speechApi.speakText(this.welcomeText);
         this.speechApi.speakText("To start, " + this.helloVocalText);
